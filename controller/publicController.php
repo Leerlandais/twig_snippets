@@ -1,8 +1,8 @@
 <?php
 
+
 use model\Manager\UserManager;
 
-$route = $_GET['route'] ?? 'home';
 
 if (isset($_POST["userLoginName"], $_POST["userLoginPwd"])) {
     $userManager = new UserManager($db); // Assuming $db is your PDO instance
@@ -18,11 +18,16 @@ if (isset($_POST["userLoginName"], $_POST["userLoginPwd"])) {
 }
 
 
+$route = $_GET['route'] ?? 'home';
 switch ($route) {
     case 'home':
         echo $twig->render('publicView/public.home.html.twig');
         break;
     case 'login' :
         echo $twig->render('publicView/public.login.html.twig');
+        break;
+    default :
+        echo $twig->render('publicView/public.home.html.twig');
+        break;
 }
 
