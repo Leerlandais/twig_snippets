@@ -1,3 +1,39 @@
 {% extends 'template.html.twig' %}
-
+{% block title %} Home | Private {% endblock %}
 {% block headerLink %}<a href="?route=logout"><span class="text-white">Logout</span></a>{% endblock %}
+
+
+{% block sideBarAdmin %}
+    <li class="option-with-dropdown-inner">
+        <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+            <div class="flex items-center">
+                <i class="fas fa-file-alt mr-2"></i>
+                <span>Add</span>
+            </div>
+                <i class="fas fa-chevron-down text-xs"></i>
+        </div>
+        <ul class="dropdown-inner ml-4 hidden">
+            <li>
+                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    Form
+                </a>
+            </li>
+            <li>
+                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    Tables
+                </a>
+            </li>
+            <li>
+                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    PHP
+                </a>
+            </li>
+            <li>
+                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    Javascript
+                </a>
+            </li>
+        </ul>
+    </li>
+{% endblock %} {# end sideBarAdmin #}
+

@@ -30,6 +30,8 @@
         </div>
     </nav>
 {% endblock %} {# end header #}
+
+
 {% block sideBar %}
     <aside class="bg-gray-800 text-white w-64 min-h-screen p-4">
         <nav>
@@ -206,7 +208,10 @@
                         </li>
                     </ul>
                 </li>
+                {% block sideBarAdmin %}
                 <!-- Add more links for the side navigation -->
+
+                {% endblock %}
             </ul>
         </nav>
     </aside>

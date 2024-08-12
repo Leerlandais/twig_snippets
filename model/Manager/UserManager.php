@@ -13,7 +13,7 @@ class UserManager {
     }
 
     public function attemptUserLogin(string $name, string $pwd): bool {
-        $name = $this->standardClean($name);
+        $name = htmlspecialchars(strip_tags(trim($name)));
 
         $sql = 'SELECT * FROM `snippets_users` WHERE `snip_user_login` = :name';
         $stmt = $this->db->prepare($sql);
@@ -39,7 +39,7 @@ class UserManager {
         return true;
     }
 
-    public function userLogout() {
+    public function userLogout() : void {
         $_SESSION = []; // equivalent of session_unset()
 
         if (ini_get("session.use_cookies")) {
@@ -52,7 +52,5 @@ class UserManager {
         session_destroy();
     }
 
-    private function standardClean(string $input): string {
-        return htmlspecialchars(strip_tags(trim($input)));
-    }
-}
+
+} // end class
