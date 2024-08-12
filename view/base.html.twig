@@ -7,14 +7,16 @@
         {% block stylesheet %}{% endblock %}
     {% endblock %}
 </head>
+{% block body %}
 <body class={% block bodyClass %}{% endblock %}>
 {% block header %}{% endblock %}
+<div class="flex">
 {% block sideBar %}{% endblock %}
 {% block content %}{% endblock %}
 
 {% block footer %}
-    Empty for Now
 {% endblock %}
+</div>
 {% block javascript %}{% endblock %}
-</body>
+</body> {% endblock %}
 </html>
