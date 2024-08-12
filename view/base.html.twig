@@ -12,8 +12,9 @@
 {% block header %}{% endblock %}
 <div class="flex">
 {% block sideBar %}{% endblock %}
+        <main class={% block mainClass %}{% endblock %}>
 {% block content %}{% endblock %}
-
+        </main>
 {% block footer %}
 {% endblock %}
 </div>
