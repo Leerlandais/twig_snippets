@@ -1,17 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block meta %}
+{% block head %}
 <meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{% endblock %} {# end meta #}
+    {% block stylesheets %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    {% endblock %} {# end stylesheets #}
+{% endblock %} {# end head #}
 
-{% block stylesheets %}
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-{% endblock %} {# end stylesheets #}
+
 
 {% block title %}Twig Test {% endblock %}
 
-{% block bodyClass %}{{ "bg-gray-100" }}{% endblock %}
+{% block bodyClass %}"bg-gray-200"{% endblock %}
+{% block header %}
+    <nav class="bg-blue-500 p-4 flex items-center justify-between">
+        <div>
+            <h1 class="text-white text-xl font-semibold">Code Snippets</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="?login"><span class="text-white">{% block headerLink %}Login{% endblock %}</span></a>
+            <i class="fas fa-user-circle text-white text-2xl"></i>
+        </div>
+    </nav>
+{% endblock %} {# end header #}
