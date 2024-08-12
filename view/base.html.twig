@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        {% block meta %}{% endblock %}
+        <title>{% block title %}Title{% endblock %}</title>
+        {% block stylesheet %}{% endblock %}
+    {% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+{% block header %}{% endblock %}
+{% block sideBar %}{% endblock %}
+{% block content %}{% endblock %}
+
+{% block footer %}
+    Empty for Now
+{% endblock %}
+{% block javascript %}{% endblock %}
+</body>
+</html>
