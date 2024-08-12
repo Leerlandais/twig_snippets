@@ -28,7 +28,7 @@ class UserManager {
 
 
         $user = new UserMapping($row);
-        $user->loadFromDbRow($row);
+
 
         if (!password_verify($pwd, $user->getSnipUserPass())) {
             return false;
