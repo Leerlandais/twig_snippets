@@ -1,5 +1,6 @@
 <?php
 
+namespace model\Abstract;
 abstract class AbstractMapping
 {
 
