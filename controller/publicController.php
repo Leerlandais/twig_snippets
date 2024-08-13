@@ -26,6 +26,7 @@ switch ($route) {
     case 'login' :
         echo $twig->render('publicView/public.login.html.twig');
         break;
+
     default :
         echo $twig->render('publicView/public.home.html.twig');
         break;
