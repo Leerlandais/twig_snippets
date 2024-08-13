@@ -65,6 +65,10 @@ switch ($route) {
                 case 'table':
 
                     break;
+                case 'phpCall':
+                    echo $twig->render('privateView/private.addPhpCall.html.twig');
+                    break;
+
             }
         break;
 
