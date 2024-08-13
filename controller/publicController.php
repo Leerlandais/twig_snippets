@@ -47,6 +47,9 @@ switch ($route) {
         }
         */
         break;
+    case 'showCode':
+
+        break;
     default :
         echo $twig->render('publicView/public.home.html.twig');
         break;
