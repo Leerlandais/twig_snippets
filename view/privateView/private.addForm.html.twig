@@ -1,10 +1,11 @@
 {% extends 'template.html.twig' %}
 {% block title %} Admin | AddForm {% endblock %}
-
+{% block headerLink %}<a href="?route=logout"><span class="text-white">Logout</span></a>{% endblock %}
+    {% block mainClass %} "mx-auto mt-6" {% endblock %}
 {% block content %}
-    <form action="./" method="POST" id="addNewForm">
+    <form action="./" method="POST" id="addNewForm" class="mx-auto">
         <div class="bg-[#F9FAFB] h-auto w-auto flex items-center">
-            <div class="h-max mx-auto flex flex-col items-center">
+            <div class="h-max mx-auto flex flex-col items-center justify-center">
                 <h3 class="text-xl font-bold text-center pb-10">Add Form</h3>
                 <div class="bg-white shadow-xl p-10 flex flex-row gap-4 text-sm text-center">
                     <div class="flex flex-row">
@@ -19,7 +20,7 @@
 
                             </div>
                             <label class="text-gray-600 font-bold inline-block pb-2" for="addFormClassNew">Add Class</label>
-                            <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormClass" id="addFormClassNew" placeholder="Add New Class">
+                            <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormClassXXX" id="addFormClassNew" placeholder="Add New Class">
                             <div>
                                 <label class="text-gray-600 font-bold inline-block pb-2" for="addFormTitle">Title</label>
                                 <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormTitle" id="addFormTitle" placeholder="Title" required>
@@ -38,7 +39,7 @@
                             </div>
                             <div class="mt-4">
                                 <label for="addFormTypeTW" class="ml-4">TW</label>
-                                <input class="ps-2 me-1 addFormType" type="radio" id="addFormTypeTW" name="addFormType" value="ts" required>
+                                <input class="ps-2 me-1 addFormType" type="radio" id="addFormTypeTW" name="addFormType" value="tw" required>
                                 <label for="addFormTypeBS" class="ml-4">BS</label>
                                 <input class="ps-2 me-1 addFormType" type="radio" id="addFormTypeBS" name="addFormType" value="bs" required>
                                 <label for="addFormTypeRW" class="ml-4">RW</label>
@@ -55,4 +56,8 @@
         </div>
     </form>
 
+{% endblock %}
+{% block javascript %}
+{{ parent() }}
+<script src="scripts/addFormScript.js"></script>
 {% endblock %}
