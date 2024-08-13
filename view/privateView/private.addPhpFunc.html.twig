@@ -2,7 +2,7 @@
 {% block title %} Admin | PhpFunc {% endblock %}
 {% block mainClass %} "mx-auto" {% endblock %}
 {% block content %}
-    <form action="./" method="POST" id="addNewForm" class="mx-auto">
+    <form action="./" method="POST" id="addNewFunc" class="mx-auto">
         <div class="bg-[#F9FAFB] h-auto w-auto flex items-center">
             <div class="h-max mx-auto flex flex-col items-center justify-center">
                 <h3 class="text-xl font-bold text-center pb-10">Add PHP Function</h3>
@@ -11,12 +11,12 @@
                         <div class="flex flex-col">
 
                             <div>
-                                <label class="text-gray-600 font-bold inline-block pb-2" for="addFormDesc">Description</label>
-                                <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFormDesc" id="addFormDesc" placeholder="Description" required>
+                                <label class="text-gray-600 font-bold inline-block pb-2" for="addFuncDesc">Description</label>
+                                <input class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="addFuncDesc" id="addFuncDesc" placeholder="Description" required>
                             </div>
                             <div>
-                                <label class="text-gray-600 font-bold inline-block pb-2" for="addFormCode">Code</label>
-                                <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" rows="30" cols="80" name="addFormCode" id="addFormCode" placeholder="Code" required></textarea>
+                                <label class="text-gray-600 font-bold inline-block pb-2" for="addFuncCode">Code</label>
+                                <textarea class="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" rows="30" cols="80" name="addFuncCode" id="addFuncCode" placeholder="Code" required></textarea>
                             </div>
                         <!--        <div class="flex flex-col"></div>       -->
                     </div>

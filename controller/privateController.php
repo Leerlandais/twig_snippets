@@ -31,8 +31,19 @@ if (isset(
     $formManager->addNewForm($formMapping);
 }
 
+if (isset(
+    $_POST["addCallDesc"],
+    $_POST["addCallCode"]
+)) {
+    echo 'back tomorrow for Call';
+}
 
-
+if (isset(
+    $_POST["addFuncDesc"],
+    $_POST["addFuncCode"]
+)) {
+    echo 'back tomorrow for Func';
+}
 
 
 $route = $_GET['route'] ?? 'home';
@@ -71,7 +82,7 @@ switch ($route) {
                 case 'phpFunc':
                     echo $twig->render('privateView/private.addPhpFunc.html.twig');
                     break;
-                    
+
 
             }
         break;
