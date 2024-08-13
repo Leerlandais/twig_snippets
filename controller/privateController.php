@@ -68,6 +68,10 @@ switch ($route) {
                 case 'phpCall':
                     echo $twig->render('privateView/private.addPhpCall.html.twig');
                     break;
+                case 'phpFunc':
+                    echo $twig->render('privateView/private.addPhpFunc.html.twig');
+                    break;
+                    
 
             }
         break;
