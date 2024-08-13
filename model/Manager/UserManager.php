@@ -6,11 +6,8 @@ use model\Mapping\UserMapping;
 use model\MyPDO;
 
 class UserManager {
-    private $db;
 
-    public function __construct(MyPDO $db) {
-        $this->db = $db;
-    }
+
 
     public function attemptUserLogin(string $name, string $pwd): bool {
         $name = htmlspecialchars(strip_tags(trim($name)));
