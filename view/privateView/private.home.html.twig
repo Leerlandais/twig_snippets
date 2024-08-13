@@ -1,39 +1,97 @@
 {% extends 'template.html.twig' %}
-{% block title %} Home | Private {% endblock %}
+{% block title %} Admin | Home {% endblock %}
 {% block headerLink %}<a href="?route=logout"><span class="text-white">Logout</span></a>{% endblock %}
 
 
 {% block sideBarAdmin %}
-    <li class="option-with-dropdown-inner">
+    <li class="option-with-dropdown">
         <div class="flex items-center justify-between p-2 hover:bg-gray-700">
             <div class="flex items-center">
                 <i class="fas fa-file-alt mr-2"></i>
                 <span>Add</span>
             </div>
-                <i class="fas fa-chevron-down text-xs"></i>
+            <i class="fas fa-chevron-down text-xs"></i>
         </div>
-        <ul class="dropdown-inner ml-4 hidden">
-            <li>
-                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                    Form
-                </a>
+        <ul class="dropdown ml-4 hidden">
+            <li class="option-with-dropdown-inner">
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                    <div class="flex items-center">
+                        <a href="?route=add&type=form" class="block p-2 hover:bg-gray-700 flex items-center">
+                            <span>Form</span>
+                        </a>
+                    </div>
+                </div>
             </li>
-            <li>
-                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                    Tables
-                </a>
+            <li class="option-with-dropdown-inner">
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                    <div class="flex items-center">
+                        <a href="?route=add&type=table" class="block p-2 hover:bg-gray-700 flex items-center">
+                            <span>Table</span>
+                        </a>
+                    </div>
+                </div>
             </li>
-            <li>
-                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                    PHP
-                </a>
+            <li class="option-with-dropdown-inner">
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                        <span>PHP</span>
+                    </div>
+                </div>
+                <ul class="dropdown-inner ml-4 hidden">
+                    <li>
+                        <a href="?route=add&type=phpCall" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Calls
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?route=add&type=phpFunc" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Functions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?route=add&type=phpNew" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Other
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li>
-                <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
-                    Javascript
-                </a>
+            <li class="option-with-dropdown-inner">
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+                <ul class="dropdown-inner ml-4 hidden">
+                    <li>
+                        <a href="?route=add&type=jsMain" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Main
+                        </a>
+                    </li>
+                    <li>
+                        <a href="jsXtra" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Secondary
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?route=add&type=jsNew" class="block p-2 hover:bg-gray-700 flex items-center">
+                            Other
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
+    </li>
+
+
+    <li class="option-with-dropdown">
+        <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+            <div class="flex items-center">
+                <i class="fas fa-file-alt mr-2"></i>
+                <span>Other</span>
+            </div>
+        </div>
     </li>
 {% endblock %} {# end sideBarAdmin #}
 

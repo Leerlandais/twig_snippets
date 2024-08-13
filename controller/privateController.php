@@ -11,5 +11,15 @@ switch ($route) {
         $userManager->userLogout();
         header ("Location: ./");
         break;
+    case 'add':
+            switch ($_GET['type']) {
+                case 'form':
+                    echo $twig->render('privateView/private.addForm.html.twig');
+                    break;
+                case 'table':
+
+                    break;
+            }
+        break;
 
 }
