@@ -14,7 +14,19 @@ switch ($route) {
     case 'add':
             switch ($_GET['type']) {
                 case 'form':
-                    echo $twig->render('privateView/private.addForm.html.twig');
+                    $buttonsForAddForm = $buttonsForAddForm = [
+                        [
+                            'class' => 'Create'
+                        ],
+                        [
+                            'class' => 'Login'
+                        ],
+                        [
+                            'class' => 'Reset'
+                        ]
+                    ];
+                    ;
+                    echo $twig->render('privateView/private.addForm.html.twig', ['buttonsForAddForm' => $buttonsForAddForm]);
                     break;
                 case 'table':
 
@@ -23,3 +35,4 @@ switch ($route) {
         break;
 
 }
+
