@@ -33,6 +33,7 @@ $loader = new FilesystemLoader(PROJECT_DIRECTORY.'/view/');
 $twig = new Environment($loader, [
     'debug' => true,
 ]);
+$twig->addExtension(new \Twig\Extension\DebugExtension());
 
 try {
     $db = MyPDO::getInstance(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";port=" . DB_PORT . ";charset=" . DB_CHARSET,

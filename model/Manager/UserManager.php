@@ -2,10 +2,11 @@
 
 namespace model\Manager;
 
+use model\Abstract\AbstractManager;
 use model\Mapping\UserMapping;
 use model\MyPDO;
 
-class UserManager {
+class UserManager extends AbstractManager {
 
 
 
