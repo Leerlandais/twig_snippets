@@ -42,4 +42,12 @@ class CodeManager extends AbstractManager
         return $codeObject;
     }
 
+    public function linkCodeToData($html, $code) : void {
+        $stmt = $this->db->prepare("INSERT INTO `snippets_form_has_code`
+                                         (`snip_form_has_id`, `snip_code_has_id`)
+                                         VALUES (?,?)");
+        $stmt->execute([$html, $code]);
+
+    }
+
 }

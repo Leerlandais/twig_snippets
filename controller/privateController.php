@@ -58,6 +58,15 @@ if (isset(
     echo 'back tomorrow for Func';
 }
 
+if (isset(
+    $_POST["linkSelectHtml"],
+    $_POST["linkSelectCode"]
+)) {
+    $html = $_POST["linkSelectHtml"];
+    $code = $_POST["linkSelectCode"];
+    $codeManager->linkCodeToData($html, $code);
+}
+
 
 $route = $_GET['route'] ?? 'home';
 switch ($route) {
