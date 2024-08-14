@@ -36,8 +36,7 @@ class FormManager extends AbstractManager
                                                  snip_form_class AS class,
                                                  snip_form_title AS title,
                                                  snip_form_desc AS descp,
-                                                 snip_form_img AS img,
-                                                 snip_form_code AS code
+                                                 snip_form_img AS img
                                           FROM `snippets_forms`
                                           WHERE snip_form_class = ?
                                           AND snip_form_type = ?");

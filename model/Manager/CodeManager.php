@@ -50,4 +50,29 @@ class CodeManager extends AbstractManager
 
     }
 
-}
+    public function getDataAndCodeById($id) : array|bool  {
+        $stmt = $this->db->prepare("SELECT sf.snip_form_id,
+                                                 sf.snip_form_class,
+                                                 sf.snip_form_title,
+                                                 sf.snip_form_desc,
+                                                 sf.snip_form_img,
+                                                 sf.snip_form_code,
+                                                 sc.snip_code_id,
+                                                 sc.snip_code_type,
+                                                 sc.snip_code_code
+                                          FROM `snippets_forms` sf
+                                          LEFT JOIN `snippets_form_has_code` fhc
+                                          ON fhc.snip_form_has_id = sf.snip_form_id
+                                          LEFT JOIN `snippets_code` sc
+                                          ON sc.snip_code_id = fhc.snip_code_has_id
+                                          WHERE sf.snip_form_id = ?
+                                          ");
+        $stmt->execute([$id]);
+        if ($stmt->rowCount() === 0) return false;
+
+        $result = $stmt->fetchAll();
+        $stmt->closeCursor();
+        return $result;
+    }
+
+} // end Class

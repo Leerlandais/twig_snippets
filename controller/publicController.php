@@ -3,8 +3,9 @@
 
 use model\Manager\UserManager;
 use model\Manager\FormManager;
+use model\Manager\CodeManager;
 $formManager = new FormManager($db);
-
+$codeManager = new CodeManager($db);
 if (isset($_POST["userLoginName"], $_POST["userLoginPwd"])) {
     $userManager = new UserManager($db);
     $name = $_POST["userLoginName"];
@@ -31,24 +32,12 @@ switch ($route) {
         $class = htmlspecialchars(strip_tags(trim($_GET['class'])));
         $type = htmlspecialchars(strip_tags(trim($_GET['type'])));
         $getDataPublic = $formManager->getDataByType($class, $type);
-
         echo $twig->render('publicView/public.form.view.html.twig', ['getData' => $getDataPublic]);
-        /*
-        switch ($_GET["class"]) {
-            case "login":
-
-                break;
-            case "create":
-
-                break;
-            case "reset":
-
-                break;
-        }
-        */
         break;
     case 'showCode':
-
+        $id = htmlspecialchars(strip_tags(trim($_GET['id'])));
+        $getDataPublic = $codeManager->getDataAndCodeById($id);
+        echo $twig->render('publicView/public.code.view.html.twig', ['getData' => $getDataPublic]);
         break;
     default :
         echo $twig->render('publicView/public.home.html.twig');
