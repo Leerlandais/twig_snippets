@@ -37,6 +37,52 @@ class FormManager extends AbstractManager
 
     }
 
+    public function updateExistingForm($formMapping) : void
+    {
+        $class = $formMapping->getSnipFormClass();
+        $type = $formMapping->getSnipFormType();
+        $title = $formMapping->getSnipFormTitle();
+        $desc = $formMapping->getSnipFormDesc();
+        $image = $formMapping->getSnipFormImg();
+        $code = $formMapping->getSnipFormCode();
+        $call = $formMapping->getSnipFormCall();
+        $func = $formMapping->getSnipFormFunc();
+        $js = $formMapping->getSnipFormJs();
+
+        $stmt = $this->db->prepare(
+            "UPDATE `snippets_forms` SET 
+                            `snip_form_class`= ?,
+                            `snip_form_type`= ?,
+                            `snip_form_title`= ?,
+                            `snip_form_desc`= ?,
+                            `snip_form_img`= ?,
+                            `snip_form_code`= ?,
+                            `snip_form_call`= ?,
+                            `snip_form_func`= ?,
+                            `snip_form_js`= ?
+                    WHERE `snip_form_id` = ?");
+
+        $stmt->bindParam(1, $class);
+        $stmt->bindParam(2, $type);
+        $stmt->bindParam(3, $title);
+        $stmt->bindParam(4, $desc);
+        $stmt->bindParam(5, $image);
+        $stmt->bindParam(6, $code);
+        $stmt->bindParam(7, $call);
+        $stmt->bindParam(8, $func);
+        $stmt->bindParam(9, $js);
+        $stmt->bindParam(10, $id);
+        
+        $stmt->execute();
+
+    }
+
+
+
+} // end Class
+
+
+/*
     public function getDataByType($class, $type) : array|bool  {
         $stmt = $this->db->prepare("SELECT snip_form_id AS id,
                                                  snip_form_class AS class,
@@ -71,5 +117,4 @@ class FormManager extends AbstractManager
         return $formObject;
     }
 
-
-} // end Class
+*/

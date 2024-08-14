@@ -38,7 +38,32 @@ if (isset(
     $formManager->addNewForm($formMapping);
 }
 
+if (isset(
+    $_POST["updateFormClass"],
+    $_POST["updateFormType"],
+    $_POST["updateFormTitle"],
+    $_POST["updateFormDesc"],
+    $_POST["updateFormImage"],
+    $_POST["updateFormCode"],
+    $_POST["updateFormCall"],
+    $_POST["updateFormFunc"],
+    $_POST["updateFormJs"]
+)) {
+    $formMappingData = [
+        'snip_form_class' => $_POST["updateFormClass"],
+        'snip_form_type' => $_POST["updateFormType"],
+        'snip_form_title' => $_POST["updateFormTitle"],
+        'snip_form_desc' => $_POST["updateFormDesc"],
+        'snip_form_img' => $_POST["updateFormImage"],
+        'snip_form_code' => $_POST["updateFormCode"],
+        'snip_form_call' => $_POST["updateFormCall"],
+        'snip_form_func' => $_POST["updateFormFunc"],
+        'snip_form_js' => $_POST["updateFormJs"]
+    ];
 
+    $formMapping = new FormMapping($formMappingData);
+    $formManager->updateExistingForm($formMapping);
+}
 
 
 
