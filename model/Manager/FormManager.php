@@ -49,4 +49,22 @@ class FormManager extends AbstractManager
         return $result;
     }
 
-}
+    public  function selectAllDataForLink() : array|bool {
+        $query = $this->db->query("SELECT snip_form_id,
+                                         snip_form_title
+                                         FROM `snippets_forms`");
+        if($query->rowCount() === 0) return false;
+        $formMapping = $query->fetchAll();
+
+        $query->closeCursor();
+        $formObject = [];
+
+        foreach ($formMapping as $form) {
+            $formObject[] = new FormMapping($form);
+        }
+
+        return $formObject;
+    }
+
+
+} // end Class
