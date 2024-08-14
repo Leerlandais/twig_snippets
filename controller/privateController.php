@@ -102,7 +102,7 @@ switch ($route) {
         $getData = $formManager->selectAllDataForLink();
 
 
-     //   $getCode = $codeManager->selectAllCodeForLink();
+        $getCode = $codeManager->selectAllCodeForLink();
         echo $twig->render('privateView/private.link.html.twig', ['getData' => $getData, 'getCode' => $getCode]);
         break;
 

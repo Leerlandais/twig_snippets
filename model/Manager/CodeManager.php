@@ -24,4 +24,22 @@ class CodeManager extends AbstractManager
 
     }
 
+
+    public  function selectAllCodeForLink() : array|bool {
+        $query = $this->db->query("SELECT snip_code_id,
+                                         snip_code_desc
+                                         FROM `snippets_code`");
+        if($query->rowCount() === 0) return false;
+        $codeMapping = $query->fetchAll();
+
+        $query->closeCursor();
+        $codeObject = [];
+
+        foreach ($codeMapping as $code) {
+            $codeObject[] = new CodeMapping($code);
+        }
+
+        return $codeObject;
+    }
+
 }
