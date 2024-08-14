@@ -24,6 +24,21 @@ class CodeManager extends AbstractManager
 
     }
 
+    public function addNewFunction(CodeMapping $codeMapping): void {
+
+        $type = $codeMapping->getSnipCodeType();
+        $desc = $codeMapping->getSnipCodeDesc();
+        $code = $codeMapping->getSnipCodeCode();
+
+
+        $query = $this->db->prepare("INSERT INTO `snippets_code`
+                                    (`snip_code_type`,
+                                     `snip_code_desc`,
+                                     `snip_code_code`) VALUES (?, ?, ?)");
+
+        $query->execute([$type, $desc, $code]);
+
+    }
 
     public  function selectAllCodeForLink() : array|bool {
         $query = $this->db->query("SELECT snip_code_id,
@@ -70,7 +85,7 @@ class CodeManager extends AbstractManager
         $stmt->execute([$id]);
         if ($stmt->rowCount() === 0) return false;
 
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetch();
         $stmt->closeCursor();
         return $result;
     }

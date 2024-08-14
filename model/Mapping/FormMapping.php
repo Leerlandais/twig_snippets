@@ -13,6 +13,10 @@ protected ?string $snip_form_title;
 protected ?string $snip_form_desc;
 protected ?string $snip_form_img;
 protected ?string $snip_form_code;
+protected ?string $snip_form_call;
+protected ?string $snip_form_func;
+protected ?string $snip_form_js;
+
 
     public function getSnipFormId(): ?int
     {
@@ -83,7 +87,36 @@ protected ?string $snip_form_code;
     {
         $this->snip_form_code = $snip_form_code;
     }
+    public function getSnipFormCall(): ?string
+    {
+        return $this->snip_form_call;
+    }
+
+    public function setSnipFormCall(?string $snip_form_call): void
+    {
+        $this->snip_form_call = $snip_form_call;
+    }
+
+    public function getSnipFormFunc(): ?string
+    {
+        return $this->snip_form_func;
+    }
+
+    public function setSnipFormFunc(?string $snip_form_func): void
+    {
+        $this->snip_form_func = $snip_form_func;
+    }
+
+    public function getSnipFormJs(): ?string
+    {
+        return $this->snip_form_js;
+    }
+
+    public function setSnipFormJs(?string $snip_form_js): void
+    {
+        $this->snip_form_js = $snip_form_js;
+    }
 
 
 
-}
+} // end Class

@@ -52,10 +52,21 @@ if (isset(
 }
 
 if (isset(
+    $_POST["addFuncType"],
     $_POST["addFuncDesc"],
     $_POST["addFuncCode"]
 )) {
-    echo 'back tomorrow for Func';
+    $type = $_POST["addFuncType"];
+    $desc = $_POST["addFuncDesc"];
+    $code = $_POST["addFuncCode"];
+    $codeMappingData = [
+        'snip_code_type' => $_POST["addFuncType"],
+        'snip_code_desc' => $_POST["addFuncDesc"],
+        'snip_code_code' => $_POST["addFuncCode"]
+    ];
+
+    $codeMapping = new CodeMapping($codeMappingData);
+    $codeManager->addNewFunction($codeMapping);
 }
 
 if (isset(

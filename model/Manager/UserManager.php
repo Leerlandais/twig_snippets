@@ -23,16 +23,12 @@ class UserManager extends AbstractManager {
         }
 
         $row = $stmt->fetch();
-
-
         $user = new UserMapping($row);
-
 
         if (!password_verify($pwd, $user->getSnipUserPass())) {
             return false;
         }
         $_SESSION["id"] = session_id();
-
 
         return true;
     }
