@@ -17,7 +17,10 @@ if (isset(
     $_POST["addFormTitle"],
     $_POST["addFormDesc"],
     $_POST["addFormImage"],
-    $_POST["addFormCode"]
+    $_POST["addFormCode"],
+    $_POST["addFormCall"],
+    $_POST["addFormFunc"],
+    $_POST["addFormJs"]
 )) {
     $formMappingData = [
         'snip_form_class' => $_POST["addFormClass"],
@@ -25,7 +28,10 @@ if (isset(
         'snip_form_title' => $_POST["addFormTitle"],
         'snip_form_desc' => $_POST["addFormDesc"],
         'snip_form_img' => $_POST["addFormImage"],
-        'snip_form_code' => $_POST["addFormCode"]
+        'snip_form_code' => $_POST["addFormCode"],
+        'snip_form_call' => $_POST["addFormCall"],
+        'snip_form_func' => $_POST["addFormFunc"],
+        'snip_form_js' => $_POST["addFormJs"]
     ];
 
     $formMapping = new FormMapping($formMappingData);

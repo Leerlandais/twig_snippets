@@ -17,6 +17,9 @@ class FormManager extends AbstractManager
         $desc = $formMapping->getSnipFormDesc();
         $image = $formMapping->getSnipFormImg();
         $code = $formMapping->getSnipFormCode();
+        $call = $formMapping->getSnipFormCall();
+        $func = $formMapping->getSnipFormFunc();
+        $js = $formMapping->getSnipFormJs();
 
 
         $query = $this->db->prepare("INSERT INTO `snippets_forms`
@@ -25,9 +28,12 @@ class FormManager extends AbstractManager
                                     `snip_form_title`, 
                                     `snip_form_desc`, 
                                     `snip_form_img`, 
-                                    `snip_form_code`) VALUES (?, ?, ?, ?, ?, ?)");
+                                    `snip_form_code`,
+                                    `snip_form_call`,
+                                    `snip_form_func`,
+                                    `snip_form_js`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $query->execute([$class, $type, $title, $desc, $image, $code]);
+        $query->execute([$class, $type, $title, $desc, $image, $code, $call, $func, $js]);
 
     }
 
