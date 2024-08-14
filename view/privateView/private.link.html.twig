@@ -4,4 +4,21 @@
 {% block content %}
 {{ dump(getData) }}
     {{ dump(getCode) }}
+    <form action="" method="post">
+        <label for="linkSelectHtml">HTML</label>
+        <select name="linkSelectHtml" id="linkSelectHtml" required>
+        {% for data in getData %}
+            <option value="{{ data.getSnipFormId }}">{{ data.getSnipFormTitle }}</option>
+            {% endfor %}
+        </select>
+        <label for="linkSelectCode">Code</label>
+        <select name="linkSelectCode" id="linkSelectCode" required>
+            {% for code in getCode %}
+                <option value="{{ code.getSnipCodeId }}">{{ code.getSnipCodeDesc }}</option>
+            {% endfor %}
+        </select>
+        <div>
+            <button type="submit" class="bg-[#4F46E5] w-auto mt-3 p-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]">Submit</button>
+        </div>
+    </form>
 {% endblock %}
