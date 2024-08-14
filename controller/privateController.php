@@ -96,8 +96,10 @@ switch ($route) {
                     echo $twig->render('privateView/private.addPhpFunc.html.twig');
                     break;
 
-
             }
+        break;
+    case 'link':
+        echo $twig->render('privateView/private.link.html.twig');
         break;
 
 }
