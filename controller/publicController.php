@@ -6,7 +6,7 @@ use model\Manager\FormManager;
 $formManager = new FormManager($db);
 
 if (isset($_POST["userLoginName"], $_POST["userLoginPwd"])) {
-    $userManager = new UserManager($db); // Assuming $db is your PDO instance
+    $userManager = new UserManager($db);
     $name = $_POST["userLoginName"];
     $pwd = $_POST["userLoginPwd"];
 
