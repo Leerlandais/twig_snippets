@@ -8,6 +8,7 @@ class CodeMapping extends AbstractMapping
 {
 protected ?int $snip_code_id;
 protected ?string $snip_code_type;
+protected ?string $snip_code_desc;
 protected ?string $snip_code_code;
 
     public function getSnipCodeId(): ?int
@@ -28,6 +29,16 @@ protected ?string $snip_code_code;
     public function setSnipCodeType(?string $snip_code_type): void
     {
         $this->snip_code_type = $snip_code_type;
+    }
+
+    public function getSnipCodeDesc(): ?string
+    {
+        return $this->snip_code_desc;
+    }
+
+    public function setSnipCodeDesc(?string $snip_code_desc): void
+    {
+        $this->snip_code_desc = $snip_code_desc;
     }
 
     public function getSnipCodeCode(): ?string

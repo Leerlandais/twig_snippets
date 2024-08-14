@@ -1,11 +1,14 @@
 <?php
+
+use model\Manager\CodeManager;
 use model\Manager\UserManager;
 use model\Manager\FormManager;
+use model\Mapping\CodeMapping;
 use model\Mapping\FormMapping;
 
-// $formMapping = new FormMapping($db);
-$formManager = new FormManager($db);
 
+$formManager = new FormManager($db);
+$codeManager = new CodeManager($db);
 // ADD NEW FORM
 
 if (isset(
@@ -26,16 +29,26 @@ if (isset(
     ];
 
     $formMapping = new FormMapping($formMappingData);
-
-    $formManager = new FormManager($db);
     $formManager->addNewForm($formMapping);
 }
 
 if (isset(
+    $_POST["addCallType"],
     $_POST["addCallDesc"],
     $_POST["addCallCode"]
 )) {
-    echo 'back tomorrow for Call';
+    $type = $_POST["addCallType"];
+    $desc = $_POST["addCallDesc"];
+    $code = $_POST["addCallCode"];
+    $codeMappingData = [
+        'snip_code_type' => $_POST["addCallType"],
+        'snip_code_desc' => $_POST["addCallDesc"],
+        'snip_code_code' => $_POST["addCallCode"]
+    ];
+
+    $codeMapping = new CodeMapping($codeMappingData);
+    $codeManager->addNewCode($codeMapping);
+
 }
 
 if (isset(
